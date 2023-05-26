@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg"
+        href="https://planoscelular.claro.com.br/medias/18391-0-zero-300Wx300H-productCard?context=bWFzdGVyfGltYWdlc3w2OTc0NHxpbWFnZS9wbmd8aGNkL2hmZi85MjY3OTY0MDE4NzE4LzE4MzkxXzBfemVyb18zMDBXeDMwMEhfcHJvZHVjdENhcmR8NGI3NDdjMWIyYWYwODEzZTQwYTY3YzRhOTc3NTc2NGFiZWJiYzBkOThlNWYwYTM4ODkwYzM3MTJlZjYwYmEzNA%22/%3E">
+    <title>iPhone 14</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="centro">
+        <div class="contorno">
+            <div class="mudarLinha">
+                <header class="cimaCelular">
+                    <div class="microfone"></div>
+                    <div class="camera"></div>
+                </header>
+
+                <main>
+                    <p id="data"></p>
+                    <h3 id="relogio"></h3>
+                </main>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        
+        
+        let dataAtual = new Date()
+        
+        let diasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+        let mesesAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+
+        
+
+        let hora = dataAtual.getHours();
+        let minutos = dataAtual.getMinutes()
+        
+
+        function formatMinutes(minutes) {
+            return minutes.toString().padStart(2, '0');
+        }
+        let minutosFormatados = formatMinutes(minutos);
+
+        console.log(hora)
+        console.log(minutos)
+        let diaSemana = diasSemana[dataAtual.getDay()];
+        let dia = dataAtual.getDate();
+        let mes = mesesAno[dataAtual.getMonth()];
+        let ano = dataAtual.getFullYear();
+
+        let dataFormatada = `${diaSemana}, ${dia} de ${mes}`;
+        document.getElementById("data").innerHTML = dataFormatada
+
+        let horaFormatada = `${hora}:${minutosFormatados}`
+        document.getElementById("relogio").innerHTML = horaFormatada
+    </script>
+</body>
+
+</html>
